@@ -1,0 +1,23 @@
+server:
+  port: 8869
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+feign:
+  hystrix:
+      enabled: true
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: feignservice
+
+
