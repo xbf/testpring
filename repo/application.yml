@@ -1,0 +1,52 @@
+server:
+  port: 8801
+  profiles: dev
+
+---
+
+spring:
+    profiles: dev
+
+server_desc: this is development envirment
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
+    instance:
+      lease-expiration-duration-in-seconds: 30 
+      lease-renewal-interval-in-seconds: 10
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+feign:
+  hystrix:
+      enabled: true
+---
+
+spring:
+    profiles: pro
+
+server_desc: this is product envirment
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/
+    instance:
+      lease-expiration-duration-in-seconds: 30 
+      lease-renewal-interval-in-seconds: 10
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+feign:
+  hystrix:
+      enabled: true
