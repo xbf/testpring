@@ -5,7 +5,7 @@
 spring:
     profiles: dev
 
-server_desc: this is development envirment
+serverdesc: this is development envirment
 
 eureka:
   client:
@@ -29,7 +29,7 @@ feign:
 spring:
     profiles: pro
 
-server_desc: this is product envirment
+serverdesc: this is product envirment
 
 eureka:
   client:
